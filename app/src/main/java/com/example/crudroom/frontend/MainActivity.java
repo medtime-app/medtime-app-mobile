@@ -149,10 +149,8 @@ public class MainActivity extends AppCompatActivity implements MedicationAdapter
             editTextMedicationName.setText(medication.getMedicationName());
             editTextDosage.setText(medication.getDosage());
             editTextNextDoseDate.setText(medication.getNextDoseDate());
-            buttonDelete.setVisibility(View.VISIBLE);
         } else {
             textViewDialogTitle.setText("Adicionar Medicação");
-            buttonDelete.setVisibility(View.GONE);
         }
 
         builder.setView(dialogView);
