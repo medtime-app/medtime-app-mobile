@@ -13,6 +13,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+//faz o processo antes das execuções
 public class MedicationViewModel extends AndroidViewModel {
     private MedicationRepository repository;
     
