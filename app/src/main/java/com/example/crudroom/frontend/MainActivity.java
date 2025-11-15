@@ -24,7 +24,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.List;
-//faz o processo antes das execuções
 
 public class MainActivity extends AppCompatActivity implements MedicationAdapter.OnMedicationClickListener {
 
@@ -150,10 +149,8 @@ public class MainActivity extends AppCompatActivity implements MedicationAdapter
             editTextMedicationName.setText(medication.getMedicationName());
             editTextDosage.setText(medication.getDosage());
             editTextNextDoseDate.setText(medication.getNextDoseDate());
-            buttonDelete.setVisibility(View.VISIBLE);
         } else {
             textViewDialogTitle.setText("Adicionar Medicação");
-            buttonDelete.setVisibility(View.GONE);
         }
 
         builder.setView(dialogView);
