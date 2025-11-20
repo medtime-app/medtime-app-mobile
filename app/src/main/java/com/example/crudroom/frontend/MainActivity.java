@@ -137,6 +137,7 @@ public class MainActivity extends AppCompatActivity implements MedicationAdapter
         View dialogView = inflater.inflate(R.layout.dialog_add_edit_medication, null);
 
         TextInputEditText editTextMedicationName = dialogView.findViewById(R.id.editTextMedicationName);
+        TextInputEditText editTextDosage = dialogView.findViewById(R.id.editTextDosage);
         TextInputEditText editTextType = dialogView.findViewById(R.id.editTextType);
         TextInputEditText editTextRecurrence = dialogView.findViewById(R.id.editTextRecurrence);
         TextInputEditText editTextStartDate = dialogView.findViewById(R.id.editTextStartDate);
@@ -149,6 +150,7 @@ public class MainActivity extends AppCompatActivity implements MedicationAdapter
         if (medication != null) {
             textViewDialogTitle.setText("Editar Medicação");
             editTextMedicationName.setText(medication.getMedicationName());
+            editTextDosage.setText(medication.getDosage());
             editTextType.setText(medication.getType());
             editTextRecurrence.setText(medication.getRecurrence());
             editTextStartDate.setText(medication.getStartDate());
@@ -169,6 +171,7 @@ public class MainActivity extends AppCompatActivity implements MedicationAdapter
 
         buttonSave.setOnClickListener(v -> {
             String medicationName = editTextMedicationName.getText().toString().trim();
+            String dosage = editTextDosage.getText().toString().trim();
             String type = editTextType.getText().toString().trim();
             String recurrence = editTextRecurrence.getText().toString().trim();
             String startDate = editTextStartDate.getText().toString().trim();
@@ -185,10 +188,11 @@ public class MainActivity extends AppCompatActivity implements MedicationAdapter
             }
 
             if (medication == null) {
-                medicationViewModel.insertMedication(medicationName, type, recurrence, startDate, endDate);
+                medicationViewModel.insertMedication(medicationName, dosage, type, recurrence, startDate, endDate);
                 Toast.makeText(MainActivity.this, "Medicação adicionada!", Toast.LENGTH_SHORT).show();
             } else {
                 medication.setMedicationName(medicationName);
+                medication.setDosage(dosage);
                 medication.setType(type);
                 medication.setRecurrence(recurrence);
                 medication.setStartDate(startDate);

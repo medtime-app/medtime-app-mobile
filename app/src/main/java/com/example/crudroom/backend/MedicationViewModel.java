@@ -22,9 +22,9 @@ public class MedicationViewModel extends AndroidViewModel {
         repository = new MedicationRepository(application);
     }
     
-    public void insertMedication(String medicationName, String type, String recurrence, String startDate, String endDate) {
+    public void insertMedication(String medicationName, String dosage, String type, String recurrence, String startDate, String endDate) {
         String currentDate = new SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault()).format(new Date());
-        Medication medication = new Medication(medicationName, type, recurrence, startDate, endDate, currentDate);
+        Medication medication = new Medication(medicationName, dosage, type, recurrence, startDate, endDate, currentDate);
         repository.insertMedication(medication);
     }
     

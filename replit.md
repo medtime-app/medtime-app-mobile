@@ -29,9 +29,9 @@ This is a native Android mobile application written in Java that manages medicat
 
 ## Key Components
 - `MainActivity.java` - Main UI controller
-- `Medication.java` - Room entity (data model with fields: id, medicationName, type, recurrence, startDate, endDate, createdDate)
+- `Medication.java` - Room entity (data model with fields: id, medicationName, dosage, type, recurrence, startDate, endDate, createdDate)
 - `MedicationDao.java` - Database access object
-- `MedicationDatabase.java` - Room database configuration (version 2)
+- `MedicationDatabase.java` - Room database configuration (version 3)
 - `MedicationViewModel.java` - ViewModel for UI data
 - `MedicationRepository.java` - Data repository pattern
 - `MedicationAdapter.java` - RecyclerView adapter
@@ -40,6 +40,7 @@ This is a native Android mobile application written in Java that manages medicat
 ### Medication Table
 - `id` (Primary Key, auto-generated) - Read-only
 - `medicationName` (String) - Editable, required
+- `dosage` (String) - Editable, optional (e.g., "500mg", "10ml")
 - `type` (String) - Editable, optional (e.g., "Comprimido", "Xarope")
 - `recurrence` (String) - Editable, optional (e.g., "Diária", "Semanal")
 - `startDate` (String) - Editable, required
@@ -74,11 +75,11 @@ This is a native Android mobile application written in Java that manages medicat
 
 ## Recent Changes
 - **2025-11-20**: Modified database structure:
-  - Removed fields: `dosage`, `nextDoseDate`
-  - Added fields: `type`, `recurrence`, `startDate`, `endDate`
-  - Updated database version from 1 to 2
+  - Removed field: `nextDoseDate`
+  - Added fields: `dosage`, `type`, `recurrence`, `startDate`, `endDate`
+  - Updated database version from 1 to 3
   - Updated all frontend components to display and edit new fields
-  - Modified RecyclerView to show: type, recurrence, start date, and end date
+  - Modified RecyclerView to show: dosage, type, recurrence, start date, and end date
   - Updated dialog form with new input fields
 - **2025-11-20**: Project imported to Replit (cannot be executed in this environment)
 

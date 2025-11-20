@@ -28,6 +28,18 @@
             android:maxLines="2"
             android:ellipsize="end" />
 
+        <!-- Dosagem -->
+        <TextView
+            android:id="@+id/textViewDosage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dosagem: 500mg"
+            android:textSize="14sp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_marginTop="4dp"
+            android:maxLines="2"
+            android:ellipsize="end" />
+
         <!-- Tipo -->
         <TextView
             android:id="@+id/textViewType"

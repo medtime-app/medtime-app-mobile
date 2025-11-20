@@ -8,7 +8,7 @@ import androidx.room.RoomDatabase;
 
 //constrói o database
 
-@Database(entities = {Medication.class}, version = 2, exportSchema = false)
+@Database(entities = {Medication.class}, version = 3, exportSchema = false)
 public abstract class MedicationDatabase extends RoomDatabase {
     
     private static MedicationDatabase instance;

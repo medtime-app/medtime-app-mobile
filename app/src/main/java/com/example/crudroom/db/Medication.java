@@ -12,6 +12,7 @@ public class Medication {
     private int id;
     
     private String medicationName;
+    private String dosage;
     private String type;
     private String recurrence;
     private String startDate;
@@ -22,8 +23,9 @@ public class Medication {
     }
     
     @Ignore
-    public Medication(String medicationName, String type, String recurrence, String startDate, String endDate, String createdDate) {
+    public Medication(String medicationName, String dosage, String type, String recurrence, String startDate, String endDate, String createdDate) {
         this.medicationName = medicationName;
+        this.dosage = dosage;
         this.type = type;
         this.recurrence = recurrence;
         this.startDate = startDate;
@@ -46,6 +48,14 @@ public class Medication {
     
     public void setMedicationName(String medicationName) {
         this.medicationName = medicationName;
+    }
+    
+    public String getDosage() {
+        return dosage;
+    }
+    
+    public void setDosage(String dosage) {
+        this.dosage = dosage;
     }
     
     public String getType() {
