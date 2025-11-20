@@ -42,8 +42,10 @@ public class MedicationAdapter extends RecyclerView.Adapter<MedicationAdapter.Me
         Medication currentMedication = medications.get(position);
 
         holder.textViewMedicationName.setText(currentMedication.getMedicationName());
-        holder.textViewDosage.setText(currentMedication.getDosage());
-        holder.textViewNextDoseDate.setText(currentMedication.getNextDoseDate());
+        holder.textViewType.setText("Tipo: " + (currentMedication.getType() != null ? currentMedication.getType() : "N/A"));
+        holder.textViewRecurrence.setText("Recorrência: " + (currentMedication.getRecurrence() != null ? currentMedication.getRecurrence() : "N/A"));
+        holder.textViewStartDate.setText("Início: " + (currentMedication.getStartDate() != null ? currentMedication.getStartDate() : "N/A"));
+        holder.textViewEndDate.setText("Fim: " + (currentMedication.getEndDate() != null ? currentMedication.getEndDate() : "N/A"));
 
         // Clique curto
         holder.itemView.setOnClickListener(v -> {
@@ -77,14 +79,18 @@ public class MedicationAdapter extends RecyclerView.Adapter<MedicationAdapter.Me
     // Classe interna pública e estática (padrão correto)
     public static class MedicationViewHolder extends RecyclerView.ViewHolder {
         final TextView textViewMedicationName;
-        final TextView textViewDosage;
-        final TextView textViewNextDoseDate;
+        final TextView textViewType;
+        final TextView textViewRecurrence;
+        final TextView textViewStartDate;
+        final TextView textViewEndDate;
 
         public MedicationViewHolder(@NonNull View itemView) {
             super(itemView);
             textViewMedicationName = itemView.findViewById(R.id.textViewMedicationName);
-            textViewDosage = itemView.findViewById(R.id.textViewDosage);
-            textViewNextDoseDate = itemView.findViewById(R.id.textViewNextDoseDate);
+            textViewType = itemView.findViewById(R.id.textViewType);
+            textViewRecurrence = itemView.findViewById(R.id.textViewRecurrence);
+            textViewStartDate = itemView.findViewById(R.id.textViewStartDate);
+            textViewEndDate = itemView.findViewById(R.id.textViewEndDate);
         }
     }
 }

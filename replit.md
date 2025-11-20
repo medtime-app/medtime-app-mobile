@@ -29,12 +29,22 @@ This is a native Android mobile application written in Java that manages medicat
 
 ## Key Components
 - `MainActivity.java` - Main UI controller
-- `Medication.java` - Room entity (data model)
+- `Medication.java` - Room entity (data model with fields: id, medicationName, type, recurrence, startDate, endDate, createdDate)
 - `MedicationDao.java` - Database access object
-- `MedicationDatabase.java` - Room database configuration
+- `MedicationDatabase.java` - Room database configuration (version 2)
 - `MedicationViewModel.java` - ViewModel for UI data
 - `MedicationRepository.java` - Data repository pattern
 - `MedicationAdapter.java` - RecyclerView adapter
+
+## Database Schema
+### Medication Table
+- `id` (Primary Key, auto-generated) - Read-only
+- `medicationName` (String) - Editable, required
+- `type` (String) - Editable, optional (e.g., "Comprimido", "Xarope")
+- `recurrence` (String) - Editable, optional (e.g., "Diária", "Semanal")
+- `startDate` (String) - Editable, required
+- `endDate` (String) - Editable, optional
+- `createdDate` (String) - Read-only, auto-generated timestamp
 
 ## Important Limitations on Replit
 ⚠️ **This Android application cannot run on Replit** because:
@@ -63,6 +73,13 @@ This is a native Android mobile application written in Java that manages medicat
 - Clean build: `./gradlew clean`
 
 ## Recent Changes
+- **2025-11-20**: Modified database structure:
+  - Removed fields: `dosage`, `nextDoseDate`
+  - Added fields: `type`, `recurrence`, `startDate`, `endDate`
+  - Updated database version from 1 to 2
+  - Updated all frontend components to display and edit new fields
+  - Modified RecyclerView to show: type, recurrence, start date, and end date
+  - Updated dialog form with new input fields
 - **2025-11-20**: Project imported to Replit (cannot be executed in this environment)
 
 ## Notes

@@ -17,11 +17,11 @@ public interface MedicationDao {
     void insertMedication(Medication medication);
     
     // READ - Buscar todas as medicações
-    @Query("SELECT * FROM medications ORDER BY nextDoseDate ASC")
+    @Query("SELECT * FROM medications ORDER BY startDate ASC")
     LiveData<List<Medication>> getAllMedications();
     
     // READ - Buscar medicações por nome (busca parcial)
-    @Query("SELECT * FROM medications WHERE medicationName LIKE :searchQuery OR dosage LIKE :searchQuery ORDER BY nextDoseDate ASC")
+    @Query("SELECT * FROM medications WHERE medicationName LIKE :searchQuery OR type LIKE :searchQuery ORDER BY startDate ASC")
     LiveData<List<Medication>> searchMedications(String searchQuery);
     
     // UPDATE - Atualizar medicação

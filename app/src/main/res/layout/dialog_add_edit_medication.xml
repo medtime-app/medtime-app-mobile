@@ -32,15 +32,15 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Campo de dosagem -->
+    <!-- Campo de tipo -->
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:hint="Dosagem (ex: 500mg)">
+        android:hint="Tipo (ex: Comprimido, Xarope)">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editTextDosage"
+            android:id="@+id/editTextType"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textCapSentences"
@@ -48,15 +48,47 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Campo de próxima dose -->
+    <!-- Campo de recorrência -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:hint="Recorrência (ex: Diária, Semanal)">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextRecurrence"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapSentences"
+            android:maxLines="2" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Campo de data de início -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:hint="Data de início (ex: 15/01/2024)">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextStartDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapSentences"
+            android:maxLines="2" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Campo de data de fim -->
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        android:hint="Próxima dose (ex: 15/01/2024 08:00)">
+        android:hint="Data de fim (ex: 31/01/2024)">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editTextNextDoseDate"
+            android:id="@+id/editTextEndDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textCapSentences"

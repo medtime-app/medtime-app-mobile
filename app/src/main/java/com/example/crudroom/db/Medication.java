@@ -12,18 +12,22 @@ public class Medication {
     private int id;
     
     private String medicationName;
-    private String dosage;
-    private String nextDoseDate;
+    private String type;
+    private String recurrence;
+    private String startDate;
+    private String endDate;
     private String createdDate;
     
     public Medication() {
     }
     
     @Ignore
-    public Medication(String medicationName, String dosage, String nextDoseDate, String createdDate) {
+    public Medication(String medicationName, String type, String recurrence, String startDate, String endDate, String createdDate) {
         this.medicationName = medicationName;
-        this.dosage = dosage;
-        this.nextDoseDate = nextDoseDate;
+        this.type = type;
+        this.recurrence = recurrence;
+        this.startDate = startDate;
+        this.endDate = endDate;
         this.createdDate = createdDate;
     }
     
@@ -44,20 +48,36 @@ public class Medication {
         this.medicationName = medicationName;
     }
     
-    public String getDosage() {
-        return dosage;
+    public String getType() {
+        return type;
     }
     
-    public void setDosage(String dosage) {
-        this.dosage = dosage;
+    public void setType(String type) {
+        this.type = type;
     }
     
-    public String getNextDoseDate() {
-        return nextDoseDate;
+    public String getRecurrence() {
+        return recurrence;
     }
     
-    public void setNextDoseDate(String nextDoseDate) {
-        this.nextDoseDate = nextDoseDate;
+    public void setRecurrence(String recurrence) {
+        this.recurrence = recurrence;
+    }
+    
+    public String getStartDate() {
+        return startDate;
+    }
+    
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+    
+    public String getEndDate() {
+        return endDate;
+    }
+    
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
     }
     
     public String getCreatedDate() {

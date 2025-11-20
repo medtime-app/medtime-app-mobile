@@ -137,8 +137,10 @@ public class MainActivity extends AppCompatActivity implements MedicationAdapter
         View dialogView = inflater.inflate(R.layout.dialog_add_edit_medication, null);
 
         TextInputEditText editTextMedicationName = dialogView.findViewById(R.id.editTextMedicationName);
-        TextInputEditText editTextDosage = dialogView.findViewById(R.id.editTextDosage);
-        TextInputEditText editTextNextDoseDate = dialogView.findViewById(R.id.editTextNextDoseDate);
+        TextInputEditText editTextType = dialogView.findViewById(R.id.editTextType);
+        TextInputEditText editTextRecurrence = dialogView.findViewById(R.id.editTextRecurrence);
+        TextInputEditText editTextStartDate = dialogView.findViewById(R.id.editTextStartDate);
+        TextInputEditText editTextEndDate = dialogView.findViewById(R.id.editTextEndDate);
         TextView textViewDialogTitle = dialogView.findViewById(R.id.textViewDialogTitle);
         MaterialButton buttonDelete = dialogView.findViewById(R.id.buttonDelete);
         MaterialButton buttonCancel = dialogView.findViewById(R.id.buttonCancel);
@@ -147,8 +149,10 @@ public class MainActivity extends AppCompatActivity implements MedicationAdapter
         if (medication != null) {
             textViewDialogTitle.setText("Editar Medicação");
             editTextMedicationName.setText(medication.getMedicationName());
-            editTextDosage.setText(medication.getDosage());
-            editTextNextDoseDate.setText(medication.getNextDoseDate());
+            editTextType.setText(medication.getType());
+            editTextRecurrence.setText(medication.getRecurrence());
+            editTextStartDate.setText(medication.getStartDate());
+            editTextEndDate.setText(medication.getEndDate());
         } else {
             textViewDialogTitle.setText("Adicionar Medicação");
         }
@@ -165,26 +169,30 @@ public class MainActivity extends AppCompatActivity implements MedicationAdapter
 
         buttonSave.setOnClickListener(v -> {
             String medicationName = editTextMedicationName.getText().toString().trim();
-            String dosage = editTextDosage.getText().toString().trim();
-            String nextDoseDate = editTextNextDoseDate.getText().toString().trim();
+            String type = editTextType.getText().toString().trim();
+            String recurrence = editTextRecurrence.getText().toString().trim();
+            String startDate = editTextStartDate.getText().toString().trim();
+            String endDate = editTextEndDate.getText().toString().trim();
 
             if (TextUtils.isEmpty(medicationName)) {
                 editTextMedicationName.setError("Nome da medicação é obrigatório");
                 return;
             }
 
-            if (TextUtils.isEmpty(nextDoseDate)) {
-                editTextNextDoseDate.setError("Data da próxima dose é obrigatória");
+            if (TextUtils.isEmpty(startDate)) {
+                editTextStartDate.setError("Data de início é obrigatória");
                 return;
             }
 
             if (medication == null) {
-                medicationViewModel.insertMedication(medicationName, dosage, nextDoseDate);
+                medicationViewModel.insertMedication(medicationName, type, recurrence, startDate, endDate);
                 Toast.makeText(MainActivity.this, "Medicação adicionada!", Toast.LENGTH_SHORT).show();
             } else {
                 medication.setMedicationName(medicationName);
-                medication.setDosage(dosage);
-                medication.setNextDoseDate(nextDoseDate);
+                medication.setType(type);
+                medication.setRecurrence(recurrence);
+                medication.setStartDate(startDate);
+                medication.setEndDate(endDate);
                 medicationViewModel.updateMedication(medication);
                 Toast.makeText(MainActivity.this, "Medicação atualizada!", Toast.LENGTH_SHORT).show();
             }

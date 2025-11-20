@@ -28,24 +28,46 @@
             android:maxLines="2"
             android:ellipsize="end" />
 
-        <!-- Dosagem -->
+        <!-- Tipo -->
         <TextView
-            android:id="@+id/textViewDosage"
+            android:id="@+id/textViewType"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Dosagem: 500mg"
+            android:text="Tipo: Comprimido"
             android:textSize="14sp"
             android:textColor="@android:color/darker_gray"
             android:layout_marginTop="4dp"
             android:maxLines="2"
             android:ellipsize="end" />
 
-        <!-- Próxima dose -->
+        <!-- Recorrência -->
         <TextView
-            android:id="@+id/textViewNextDoseDate"
+            android:id="@+id/textViewRecurrence"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Próxima dose: 01/01/2024"
+            android:text="Recorrência: Diária"
+            android:textSize="14sp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_marginTop="4dp"
+            android:maxLines="2"
+            android:ellipsize="end" />
+
+        <!-- Data de início -->
+        <TextView
+            android:id="@+id/textViewStartDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Início: 01/01/2024"
+            android:textSize="14sp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_marginTop="4dp" />
+
+        <!-- Data de fim -->
+        <TextView
+            android:id="@+id/textViewEndDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fim: 31/01/2024"
             android:textSize="14sp"
             android:textColor="@android:color/darker_gray"
             android:layout_marginTop="4dp" />
