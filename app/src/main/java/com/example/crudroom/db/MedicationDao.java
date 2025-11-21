@@ -11,28 +11,25 @@ import java.util.List;
 
 @Dao
 public interface MedicationDao {
-    
-    // CREATE - Inserir nova medicação
+
     @Insert
     void insertMedication(Medication medication);
     
-    // READ - Buscar todas as medicações
+    //buscar todas
     @Query("SELECT * FROM medications ORDER BY startDate ASC")
     LiveData<List<Medication>> getAllMedications();
     
-    // READ - Buscar medicações por nome (busca parcial)
-    @Query("SELECT * FROM medications WHERE medicationName LIKE :searchQuery OR type LIKE :searchQuery ORDER BY startDate ASC")
+    //busca parcial
+    @Query("SELECT * FROM medications WHERE medicationName LIKE :searchQuery OR type LIKE :searchQuery OR dosage LIKE :searchQuery ORDER BY startDate ASC")
     LiveData<List<Medication>> searchMedications(String searchQuery);
-    
-    // UPDATE - Atualizar medicação
+
     @Update
     void updateMedication(Medication medication);
-    
-    // DELETE - Deletar medicação
+
     @Delete
     void deleteMedication(Medication medication);
-    
-    // DELETE - Deletar todas as medicações
+
+    //deleta todas
     @Query("DELETE FROM medications")
     void deleteAllMedications();
 }

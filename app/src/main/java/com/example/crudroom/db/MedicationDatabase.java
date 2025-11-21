@@ -8,24 +8,24 @@ import androidx.room.RoomDatabase;
 
 //constrói o database
 
-@Database(entities = {Medication.class}, version = 3, exportSchema = false)
+@Database(entities = {Medication.class, IntakeHistory.class}, version = 4, exportSchema = false)
 public abstract class MedicationDatabase extends RoomDatabase {
-    
+
     private static MedicationDatabase instance;
-    
+
     public abstract MedicationDao medicationDao();
-    
+    public abstract IntakeHistoryDao intakeHistoryDao();
+
     public static synchronized MedicationDatabase getInstance(Context context) {
         if (instance == null) {
             instance = Room.databaseBuilder(
-                    context.getApplicationContext(),
-                    MedicationDatabase.class,
-                    "medication_database"
-            )
-            .fallbackToDestructiveMigration()
-            .build();
+                            context.getApplicationContext(),
+                            MedicationDatabase.class,
+                            "medication_database"
+                    )
+                    .fallbackToDestructiveMigration()
+                    .build();
         }
         return instance;
     }
 }
-

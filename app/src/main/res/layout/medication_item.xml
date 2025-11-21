@@ -16,7 +16,7 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Nome da medicação -->
+        <!--nome -->
         <TextView
             android:id="@+id/textViewMedicationName"
             android:layout_width="match_parent"
@@ -28,7 +28,7 @@
             android:maxLines="2"
             android:ellipsize="end" />
 
-        <!-- Dosagem -->
+        <!-- dosagem -->
         <TextView
             android:id="@+id/textViewDosage"
             android:layout_width="match_parent"
@@ -40,7 +40,7 @@
             android:maxLines="2"
             android:ellipsize="end" />
 
-        <!-- Tipo -->
+        <!-- tipo-->
         <TextView
             android:id="@+id/textViewType"
             android:layout_width="match_parent"
@@ -52,7 +52,7 @@
             android:maxLines="2"
             android:ellipsize="end" />
 
-        <!-- Recorrência -->
+        <!-- recorrência -->
         <TextView
             android:id="@+id/textViewRecurrence"
             android:layout_width="match_parent"
@@ -64,7 +64,7 @@
             android:maxLines="2"
             android:ellipsize="end" />
 
-        <!-- Data de início -->
+        <!-- início -->
         <TextView
             android:id="@+id/textViewStartDate"
             android:layout_width="match_parent"
@@ -74,7 +74,7 @@
             android:textColor="@android:color/darker_gray"
             android:layout_marginTop="4dp" />
 
-        <!-- Data de fim -->
+        <!-- fim -->
         <TextView
             android:id="@+id/textViewEndDate"
             android:layout_width="match_parent"

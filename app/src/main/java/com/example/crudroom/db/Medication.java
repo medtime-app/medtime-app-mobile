@@ -1,6 +1,7 @@
 package com.example.crudroom.db;
 
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
@@ -20,6 +21,7 @@ public class Medication {
     private String createdDate;
     
     public Medication() {
+
     }
     
     @Ignore
@@ -32,12 +34,10 @@ public class Medication {
         this.endDate = endDate;
         this.createdDate = createdDate;
     }
-    
-    // Getters and Setters
+
     public int getId() {
         return id;
     }
-    
     public void setId(int id) {
         this.id = id;
     }
@@ -45,7 +45,6 @@ public class Medication {
     public String getMedicationName() {
         return medicationName;
     }
-    
     public void setMedicationName(String medicationName) {
         this.medicationName = medicationName;
     }
@@ -53,7 +52,6 @@ public class Medication {
     public String getDosage() {
         return dosage;
     }
-    
     public void setDosage(String dosage) {
         this.dosage = dosage;
     }
@@ -61,7 +59,6 @@ public class Medication {
     public String getType() {
         return type;
     }
-    
     public void setType(String type) {
         this.type = type;
     }
@@ -69,7 +66,6 @@ public class Medication {
     public String getRecurrence() {
         return recurrence;
     }
-    
     public void setRecurrence(String recurrence) {
         this.recurrence = recurrence;
     }
@@ -77,15 +73,13 @@ public class Medication {
     public String getStartDate() {
         return startDate;
     }
-    
     public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
-    
+
     public String getEndDate() {
         return endDate;
     }
-    
     public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
@@ -93,7 +87,6 @@ public class Medication {
     public String getCreatedDate() {
         return createdDate;
     }
-    
     public void setCreatedDate(String createdDate) {
         this.createdDate = createdDate;
     }
