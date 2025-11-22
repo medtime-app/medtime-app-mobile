@@ -19,7 +19,6 @@ public class MedicationAdapter extends RecyclerView.Adapter<MedicationAdapter.Me
     private List<Medication> medications = new ArrayList<>();
     private OnMedicationClickListener listener;
 
-    // Interface de callback para cliques curtos e longos
     public interface OnMedicationClickListener {
         void onMedicationClick(Medication medication);
         void onMedicationLongClick(Medication medication);
@@ -42,10 +41,13 @@ public class MedicationAdapter extends RecyclerView.Adapter<MedicationAdapter.Me
         Medication currentMedication = medications.get(position);
 
         holder.textViewMedicationName.setText(currentMedication.getMedicationName());
-        holder.textViewDosage.setText(currentMedication.getDosage());
-        holder.textViewNextDoseDate.setText(currentMedication.getNextDoseDate());
+        holder.textViewDosage.setText("Dosagem: " + (currentMedication.getDosage() != null ? currentMedication.getDosage() : "N/A"));
+        holder.textViewType.setText("Tipo: " + (currentMedication.getType() != null ? currentMedication.getType() : "N/A"));
+        holder.textViewRecurrence.setText("Recorrência: " + (currentMedication.getRecurrence() != null ? currentMedication.getRecurrence() : "N/A"));
+        holder.textViewStartDate.setText("Início: " + (currentMedication.getStartDate() != null ? currentMedication.getStartDate() : "N/A"));
+        holder.textViewEndDate.setText("Fim: " + (currentMedication.getEndDate() != null ? currentMedication.getEndDate() : "N/A"));
 
-        // Clique curto
+        //curto
         holder.itemView.setOnClickListener(v -> {
             int pos = holder.getBindingAdapterPosition();
             if (listener != null && pos != RecyclerView.NO_POSITION) {
@@ -53,7 +55,7 @@ public class MedicationAdapter extends RecyclerView.Adapter<MedicationAdapter.Me
             }
         });
 
-        // Clique longo
+        //longo
         holder.itemView.setOnLongClickListener(v -> {
             int pos = holder.getBindingAdapterPosition();
             if (listener != null && pos != RecyclerView.NO_POSITION) {
@@ -68,23 +70,27 @@ public class MedicationAdapter extends RecyclerView.Adapter<MedicationAdapter.Me
         return medications.size();
     }
 
-    // Atualiza a lista exibida
     public void setMedications(List<Medication> medications) {
         this.medications = medications;
         notifyItemRangeChanged(0, medications.size());
     }
 
-    // Classe interna pública e estática (padrão correto)
     public static class MedicationViewHolder extends RecyclerView.ViewHolder {
         final TextView textViewMedicationName;
         final TextView textViewDosage;
-        final TextView textViewNextDoseDate;
+        final TextView textViewType;
+        final TextView textViewRecurrence;
+        final TextView textViewStartDate;
+        final TextView textViewEndDate;
 
         public MedicationViewHolder(@NonNull View itemView) {
             super(itemView);
             textViewMedicationName = itemView.findViewById(R.id.textViewMedicationName);
             textViewDosage = itemView.findViewById(R.id.textViewDosage);
-            textViewNextDoseDate = itemView.findViewById(R.id.textViewNextDoseDate);
+            textViewType = itemView.findViewById(R.id.textViewType);
+            textViewRecurrence = itemView.findViewById(R.id.textViewRecurrence);
+            textViewStartDate = itemView.findViewById(R.id.textViewStartDate);
+            textViewEndDate = itemView.findViewById(R.id.textViewEndDate);
         }
     }
 }
