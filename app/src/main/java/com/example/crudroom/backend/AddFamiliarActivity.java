@@ -1,4 +1,4 @@
-package com.example.medtimeapp;
+package com.example.crudroom.backend;
 
 import android.content.Intent;
 import android.os.Bundle;
